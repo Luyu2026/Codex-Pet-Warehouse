@@ -13,7 +13,6 @@
 - `cream-orange-cat-coder`: 奶油橘白猫宠物。
 - `tuxedo-cat-coder`: 黑白长毛猫宠物。
 - `陆羽-coder`: 基于真人照片生成的黑衣编码伙伴。
-- `明星-coder`: 本机已有的另一组人物宠物。
 
 ## 安装宠物
 
