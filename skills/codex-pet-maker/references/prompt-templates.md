@@ -42,6 +42,27 @@ Critical quality: one cat per cell, no ghosting, no afterimages, no duplicate si
 Background: transparent if possible, otherwise flat removable light checker-free background.
 ```
 
+## Pet Photo Dog
+
+```text
+Create a Codex-compatible 8-column by 9-row soft chibi dog spritesheet from the reference dog photo.
+Style: rounded plush mascot, soft semi-3D sticker look, gentle shading, warm highlights, subtle fur texture, big expressive eyes. Match the cute pet-photo style of the existing cat pets. Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
+Preserve key breed traits: coat colors and markings, ear shape, tail type, face mask or muzzle color, body proportions, and the dog's general expression.
+Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
+Rows:
+1 seated idle, blink, breathing;
+2 side-run or side-walk movement facing left, paws alternating;
+3 side-run or side-walk movement facing right, paws alternating;
+4 paw raise / greeting;
+5 happy jump or playful bounce;
+6 error/confused, first two frames holding ERROR sign;
+7 progress bars labeled exactly 0%, 20%, 40%, 60%, 80%, 100%, 100%, 100%;
+8 front-facing walk toward viewer;
+9 sitting with small dark laptop, typing/blinking.
+Critical quality: one dog per cell, no ghosting, no afterimages, no duplicate silhouettes, no motion trails, no cropped ears/tail/paws, no cell bleeding.
+Background: transparent if possible, otherwise flat removable light checker-free background.
+```
+
 ## Repair Prompt
 
 When regenerating only a bad row:

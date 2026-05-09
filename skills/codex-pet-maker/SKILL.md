@@ -41,7 +41,7 @@ Important: if a user reports that left/right movement faces the wrong way, flip 
 
 ## Recommended Generation Prompt Shape
 
-Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots and the cat template for pet-photo mascots.
+Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots, the cat template for pet-photo cat mascots, and the dog template for soft pet-photo dog mascots.
 
 Always include:
 

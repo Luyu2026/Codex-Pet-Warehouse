@@ -14,7 +14,9 @@
 ## 已收录宠物
 
 - `pig-hero-coder`: 红衣小猪英雄风格宠物，按最终确认的动作组整理。
-- `corgi-coder`: 基于柯基参考图制作的开心短腿编码伙伴。
+- `corgi-coder`: 基于柯基参考图重做的软萌短腿编码伙伴。
+- `husky-coder`: 基于哈士奇参考图制作的软萌异瞳编码伙伴。
+- `golden-retriever-coder`: 基于金毛参考图制作的温柔长毛编码伙伴。
 - `cream-orange-cat-coder`: 奶油橘白猫宠物。
 - `tuxedo-cat-coder`: 黑白长毛猫宠物。
 - `陆羽-coder`: 基于真人照片生成的黑衣编码伙伴。
@@ -59,3 +61,5 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 ## 新手教程
 
 - [0 基础：跟着做一组 Codex 柯基宠物](docs/corgi-pet-zero-to-one.md)
+- [0 基础：跟着做一组 Codex 哈士奇宠物](docs/husky-pet-zero-to-one.md)
+- [0 基础：跟着做一组 Codex 金毛宠物](docs/golden-retriever-pet-zero-to-one.md)
