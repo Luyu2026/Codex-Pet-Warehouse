@@ -2,6 +2,8 @@
 
 Use these as starting points. Keep the user's requested identity and style above the template when they provide references.
 
+Important production rule: final pet artwork should come from image generation, not programmatic drawing. Use scripts only after the artwork exists, for packaging, cleanup, validation, direction fixes, or small bad-cell repairs.
+
 ## Pig Hero Mascot
 
 ```text
@@ -46,8 +48,9 @@ Background: transparent if possible, otherwise flat removable light checker-free
 
 ```text
 Create a Codex-compatible 8-column by 9-row soft chibi dog spritesheet from the reference dog photo.
-Style: match the existing cat pet spritesheets as the visual anchor: delicate fluffy fur edges, soft watercolor-like semi-3D sticker volume, gentle shading, warm highlights, big expressive eyes, cute rounded proportions. Avoid program-drawn vector art, pixel art, hard icon outlines, flat emoji style, jagged edges, and geometric blocky bodies.
-Preserve key breed traits: coat colors and markings, ear shape, tail type, face mask or muzzle color, body proportions, and the dog's general expression.
+Style anchor: match the existing cat pet spritesheets, especially cream-orange-cat-coder and tuxedo-cat-coder: delicate fluffy fur edges, soft watercolor-like semi-3D sticker volume, gentle shading, warm highlights, big expressive eyes, cute rounded proportions.
+Identity anchor: use the reference dog photo for breed traits: coat colors and markings, ear shape, tail type, face mask or muzzle color, body proportions, and the dog's general expression.
+Avoid program-drawn vector art, pixel art, hard icon outlines, flat emoji style, jagged edges, and geometric blocky bodies.
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:
 1 seated idle, blink, breathing;

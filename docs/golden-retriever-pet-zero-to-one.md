@@ -20,6 +20,7 @@ pets/golden-retriever-coder/
 - 下垂耳朵。
 - 温柔圆眼、黑鼻子、开心张嘴。
 - 蓬松尾巴，侧面动作里要能看出长毛狗轮廓。
+- 最终美术用图片生成完成；程序脚本只负责打包、清理、校验和少量坏格修补，不用来从零画角色。
 
 ## 制作步骤
 
@@ -32,7 +33,8 @@ pets/golden-retriever-coder/
 2. 生成时锁定这些要求：
 
 ```text
-Style: use the existing cat pet spritesheet as the visual anchor, with delicate long-fur edges, soft semi-3D sticker look, gentle shading, warm highlights.
+Style anchor: use the existing cat pet spritesheet as the visual anchor, with delicate long-fur edges, soft semi-3D sticker look, gentle shading, warm highlights.
+Identity anchor: use the golden retriever photo for golden coat, droopy ears, gentle round eyes, black nose, long fur, and fluffy tail.
 Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
 Rows: idle, left movement, right movement, greeting, happy jump, error/confused, progress, front walk, laptop coding.
 Critical quality: one golden retriever per cell, no ghosting, no afterimages, no cropped ears/tail/paws, no cell bleeding.

@@ -20,6 +20,7 @@ pets/husky-coder/
 - 直立尖耳。
 - 参考图里的明亮眼睛，本组做成一蓝一棕，方便小尺寸辨认。
 - 活泼张嘴、粉色舌头、卷尾。
+- 最终美术用图片生成完成；程序脚本只负责打包、清理、校验和少量坏格修补，不用来从零画角色。
 
 ## 制作步骤
 
@@ -32,7 +33,8 @@ pets/husky-coder/
 2. 生成时锁定这些要求：
 
 ```text
-Style: use the existing cat pet spritesheet as the visual anchor, with delicate fur edges, soft semi-3D sticker look, gentle shading, subtle fur texture.
+Style anchor: use the existing cat pet spritesheet as the visual anchor, with delicate fur edges, soft semi-3D sticker look, gentle shading, subtle fur texture.
+Identity anchor: use the husky photo for black-and-white mask, upright ears, bright eyes, lively expression, and curled tail.
 Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
 Rows: idle, left movement, right movement, greeting, happy jump, error/confused, progress, front walk, laptop coding.
 Critical quality: one husky per cell, no ghosting, no afterimages, no cropped ears/tail/paws, no cell bleeding.

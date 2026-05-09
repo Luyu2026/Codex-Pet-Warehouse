@@ -10,6 +10,7 @@
 
 - `pets/`: 已完成的宠物包，复制到 `~/.codex/pets` 后即可在 Codex 的自定义宠物列表中选择。
 - `skills/codex-pet-maker/`: 制作和修复 Codex 宠物的 skill，包含提示词范本、动作规划、重影修复、方向修复、打包校验脚本。
+- `docs/`: 0 基础教程和制作经验记录，包含本次确认的美术流程结论。
 
 ## 已收录宠物
 
@@ -48,11 +49,13 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 ## 制作流程摘要
 
 1. 先确认宠物人格、名字、动作差异和参考图特征。
-2. 用 skill 内的提示词范本生成 8 列 x 9 行的透明 spritesheet，尺寸为 `1536 x 1872`，单格 `192 x 208`。狗狗类宠物优先参考现有两只猫咪的细腻毛发、柔和阴影和半立体贴纸感。
-3. 使用 `scripts/pet_atlas.py package` 清理假透明背景、可选重排格子、生成 `pet.json`。使用 `--repack` 后必须人工检查 `spritesheet-grid-check.png`，避免重排漏格。
-4. 用 `scripts/pet_atlas.py validate` 校验尺寸、透明度和元数据。
-5. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行。
-6. 用 `scripts/pet_atlas.py install` 安装到 `~/.codex/pets`。
+2. 最终美术使用图片生成流程，不用程序脚本从零绘制。程序只负责打包、清理、校验、方向修复和少量补坏格。
+3. 用已经满意的 spritesheet 做风格锚点，用用户照片做身份锚点。狗狗类宠物优先参考现有两只猫咪的细腻毛发、柔和阴影和半立体贴纸感，再叠加柯基/哈士奇/金毛照片里的品种特征。
+4. 用 skill 内的提示词范本生成 8 列 x 9 行的透明 spritesheet，尺寸为 `1536 x 1872`，单格 `192 x 208`。
+5. 使用 `scripts/pet_atlas.py package` 清理假透明背景、可选重排格子、生成 `pet.json`。使用 `--repack` 后必须人工检查 `spritesheet-grid-check.png`，避免重排漏格。
+6. 用 `scripts/pet_atlas.py validate` 校验尺寸、透明度和元数据。
+7. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行。
+8. 用 `scripts/pet_atlas.py install` 安装到 `~/.codex/pets`。
 
 脚本依赖 Pillow；如果系统 `python3` 没有 Pillow，可以在 Codex 里使用 bundled Python runtime。
 
@@ -63,3 +66,4 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 - [0 基础：跟着做一组 Codex 柯基宠物](docs/corgi-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 哈士奇宠物](docs/husky-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 金毛宠物](docs/golden-retriever-pet-zero-to-one.md)
+- [Codex Pet 美术流程结论](docs/pet-artwork-pipeline-notes.md)

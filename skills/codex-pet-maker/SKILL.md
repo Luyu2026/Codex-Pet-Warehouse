@@ -32,18 +32,21 @@ Important: if a user reports that left/right movement faces the wrong way, flip 
 ## Workflow
 
 1. Inspect existing pets first if the user says "like the previous one": `find ~/.codex/pets -maxdepth 2 -type f`.
-2. Generate the spritesheet with the built-in image generation flow. If the user provides reference images, preserve the key identity traits but make a small, readable mascot.
-3. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
-4. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
-5. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
-6. Install by copying the package folder into `~/.codex/pets/`. In Codex sandboxed environments this may require user approval.
-7. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
+2. Do not draw final artwork with programmatic vector/geometric scripts. Use image generation for final mascot art; keep scripts for packaging, cleanup, validation, direction fixes, and occasional bad-cell repair.
+3. When a successful pet already exists, use its spritesheet as the style anchor. For cat-style dog pets, use `cream-orange-cat-coder` or `tuxedo-cat-coder` as the style reference, then use the user's dog photo as the identity reference.
+4. Generate the spritesheet with the built-in image generation flow. Preserve the key identity traits but make a small, readable mascot.
+5. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
+6. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
+7. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
+8. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, and cell bleeding.
+9. Install by copying the package folder into `~/.codex/pets/`. In Codex sandboxed environments this may require user approval.
+10. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
 
 ## Recommended Generation Prompt Shape
 
 Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots, the cat template for pet-photo cat mascots, and the dog template for cat-style soft pet-photo dog mascots.
 
-For dogs, use the existing cat pets as the style anchor: delicate fur edges, soft shading, rounded semi-3D sticker volume, and cute expressive faces. Do not use program-drawn final art, pixel art, flat emoji, hard vector outlines, or geometric block bodies unless the user explicitly asks for that style.
+For dogs, use the existing cat pets as the style anchor: delicate fur edges, soft shading, rounded semi-3D sticker volume, and cute expressive faces. Use the dog photo only as the identity anchor for breed traits, markings, ears, tail, proportions, and expression. Do not use program-drawn final art, pixel art, flat emoji, hard vector outlines, or geometric block bodies unless the user explicitly asks for that style.
 
 Always include:
 
