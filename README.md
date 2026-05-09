@@ -21,14 +21,22 @@
 - `cream-orange-cat-coder`: 奶油橘白猫宠物。
 - `tuxedo-cat-coder`: 黑白长毛猫宠物。
 - `陆羽-coder`: 基于真人照片生成的黑衣编码伙伴。
+- `酷儿-coder`: 基于蓝色卡通形象制作的开心编码伙伴。
 
 ## 安装宠物
 
-在仓库根目录执行：
+批量安装全部宠物时，在仓库根目录执行：
 
 ```bash
 mkdir -p ~/.codex/pets
 cp -R pets/* ~/.codex/pets/
+```
+
+单独覆盖某个已存在宠物时，用复制“目录内容”的写法，避免套出 `pet-id/pet-id` 这种同名嵌套目录：
+
+```bash
+mkdir -p ~/.codex/pets/<pet-id>
+cp -R pets/<pet-id>/. ~/.codex/pets/<pet-id>/
 ```
 
 如果 Codex 已经打开，复制后重新打开自定义宠物列表；必要时切换一次宠物或重启 Codex，以避免缓存还停留在旧图。
@@ -57,6 +65,8 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 7. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行。
 8. 用 `scripts/pet_atlas.py install` 安装到 `~/.codex/pets`。
 
+方向是每次必须检查的高频坑：第 2 行必须朝左，第 3 行必须朝右。只修朝向时按单格 `flip-rows`，不要倒序整行。详细清单见 [Codex Pet 方向 QA 清单](docs/pet-direction-qa.md)。
+
 脚本依赖 Pillow；如果系统 `python3` 没有 Pillow，可以在 Codex 里使用 bundled Python runtime。
 
 更多提示词和排错细节见 `skills/codex-pet-maker/SKILL.md`。
@@ -66,4 +76,6 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 - [0 基础：跟着做一组 Codex 柯基宠物](docs/corgi-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 哈士奇宠物](docs/husky-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 金毛宠物](docs/golden-retriever-pet-zero-to-one.md)
+- [0 基础：跟着做一组 Codex 酷儿宠物](docs/kuer-pet-zero-to-one.md)
 - [Codex Pet 美术流程结论](docs/pet-artwork-pipeline-notes.md)
+- [Codex Pet 方向 QA 清单](docs/pet-direction-qa.md)

@@ -18,8 +18,8 @@ The current Codex pet renderer expects an `8 x 9` atlas at `1536 x 1872`, sliced
 Keep this row order unless the local renderer is known to use a different contract:
 
 1. Idle / standing or sitting
-2. Movement direction A
-3. Movement direction B
+2. Left movement: the pet must face left
+3. Right movement: the pet must face right
 4. Greet / attention
 5. Happy / jump / play
 6. Error / confused
@@ -28,6 +28,13 @@ Keep this row order unless the local renderer is known to use a different contra
 9. Coding / laptop / keyboard
 
 Important: if a user reports that left/right movement faces the wrong way, flip only rows 2 and/or 3 per cell with `scripts/pet_atlas.py flip-rows`. Do not mirror the entire row across columns; that reverses frame order.
+
+Direction repair table:
+
+- Only left movement faces wrong: `flip-rows --rows 2`.
+- Only right movement faces wrong: `flip-rows --rows 3`.
+- Both movement rows face wrong: `flip-rows --rows 2 3`.
+- Direction is correct but animation plays backward: do not flip; restore row frame order or regenerate the row.
 
 ## Workflow
 
@@ -38,8 +45,8 @@ Important: if a user reports that left/right movement faces the wrong way, flip 
 5. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
 6. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
 7. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
-8. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, and cell bleeding.
-9. Install by copying the package folder into `~/.codex/pets/`. In Codex sandboxed environments this may require user approval.
+8. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, and left/right movement direction errors.
+9. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
 10. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
 
 ## Recommended Generation Prompt Shape
@@ -83,3 +90,5 @@ python scripts/pet_atlas.py install --pet-dir <pet-folder>
 Use `--repack` when the generated atlas visually looks like a grid but Codex previews show fragments from neighboring cells. Repacking labels whole connected components and re-centers them into true `192 x 208` cells. Always inspect `spritesheet-grid-check.png` afterward; if a frame is missing, replace the bad cell from a neighboring good frame or regenerate that row.
 
 Use `flip-rows` when movement direction is reversed. It flips each frame inside the listed row numbers while preserving frame order.
+
+Before finishing, always test or inspect the movement contract: row 2 faces left and row 3 faces right. If the local Codex preview still shows old movement, reinstall the pet folder contents into `~/.codex/pets/<pet-id>/` and restart Codex to clear cache.
