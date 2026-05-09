@@ -41,7 +41,9 @@ Important: if a user reports that left/right movement faces the wrong way, flip 
 
 ## Recommended Generation Prompt Shape
 
-Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots, the cat template for pet-photo cat mascots, and the dog template for soft pet-photo dog mascots.
+Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots, the cat template for pet-photo cat mascots, and the dog template for cat-style soft pet-photo dog mascots.
+
+For dogs, use the existing cat pets as the style anchor: delicate fur edges, soft shading, rounded semi-3D sticker volume, and cute expressive faces. Do not use program-drawn final art, pixel art, flat emoji, hard vector outlines, or geometric block bodies unless the user explicitly asks for that style.
 
 Always include:
 
@@ -75,6 +77,6 @@ python scripts/pet_atlas.py flip-rows --pet-dir <pet-folder> --rows 2 3
 python scripts/pet_atlas.py install --pet-dir <pet-folder>
 ```
 
-Use `--repack` when the generated atlas visually looks like a grid but Codex previews show fragments from neighboring cells. Repacking labels whole connected components and re-centers them into true `192 x 208` cells.
+Use `--repack` when the generated atlas visually looks like a grid but Codex previews show fragments from neighboring cells. Repacking labels whole connected components and re-centers them into true `192 x 208` cells. Always inspect `spritesheet-grid-check.png` afterward; if a frame is missing, replace the bad cell from a neighboring good frame or regenerate that row.
 
 Use `flip-rows` when movement direction is reversed. It flips each frame inside the listed row numbers while preserving frame order.

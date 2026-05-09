@@ -14,9 +14,9 @@
 ## 已收录宠物
 
 - `pig-hero-coder`: 红衣小猪英雄风格宠物，按最终确认的动作组整理。
-- `corgi-coder`: 基于柯基参考图重做的软萌短腿编码伙伴。
-- `husky-coder`: 基于哈士奇参考图制作的软萌异瞳编码伙伴。
-- `golden-retriever-coder`: 基于金毛参考图制作的温柔长毛编码伙伴。
+- `corgi-coder`: 基于柯基参考图重做的猫咪范本软萌插画风短腿编码伙伴。
+- `husky-coder`: 基于哈士奇参考图制作的猫咪范本软萌插画风编码伙伴。
+- `golden-retriever-coder`: 基于金毛参考图制作的猫咪范本软萌插画风长毛编码伙伴。
 - `cream-orange-cat-coder`: 奶油橘白猫宠物。
 - `tuxedo-cat-coder`: 黑白长毛猫宠物。
 - `陆羽-coder`: 基于真人照片生成的黑衣编码伙伴。
@@ -48,8 +48,8 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 ## 制作流程摘要
 
 1. 先确认宠物人格、名字、动作差异和参考图特征。
-2. 用 skill 内的提示词范本生成 8 列 x 9 行的透明 spritesheet，尺寸为 `1536 x 1872`，单格 `192 x 208`。
-3. 使用 `scripts/pet_atlas.py package` 清理假透明背景、可选重排格子、生成 `pet.json`。
+2. 用 skill 内的提示词范本生成 8 列 x 9 行的透明 spritesheet，尺寸为 `1536 x 1872`，单格 `192 x 208`。狗狗类宠物优先参考现有两只猫咪的细腻毛发、柔和阴影和半立体贴纸感。
+3. 使用 `scripts/pet_atlas.py package` 清理假透明背景、可选重排格子、生成 `pet.json`。使用 `--repack` 后必须人工检查 `spritesheet-grid-check.png`，避免重排漏格。
 4. 用 `scripts/pet_atlas.py validate` 校验尺寸、透明度和元数据。
 5. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行。
 6. 用 `scripts/pet_atlas.py install` 安装到 `~/.codex/pets`。

@@ -46,7 +46,7 @@ Background: transparent if possible, otherwise flat removable light checker-free
 
 ```text
 Create a Codex-compatible 8-column by 9-row soft chibi dog spritesheet from the reference dog photo.
-Style: rounded plush mascot, soft semi-3D sticker look, gentle shading, warm highlights, subtle fur texture, big expressive eyes. Match the cute pet-photo style of the existing cat pets. Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
+Style: match the existing cat pet spritesheets as the visual anchor: delicate fluffy fur edges, soft watercolor-like semi-3D sticker volume, gentle shading, warm highlights, big expressive eyes, cute rounded proportions. Avoid program-drawn vector art, pixel art, hard icon outlines, flat emoji style, jagged edges, and geometric blocky bodies.
 Preserve key breed traits: coat colors and markings, ear shape, tail type, face mask or muzzle color, body proportions, and the dog's general expression.
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:

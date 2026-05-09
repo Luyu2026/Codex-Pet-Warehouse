@@ -1,6 +1,6 @@
 # 0 基础：跟着做一组 Codex 金毛宠物
 
-这篇文档记录 `pets/golden-retriever-coder` 的制作过程。目标是把参考图里的金毛做成软萌、温柔、长毛感明显的 Codex 宠物。
+这篇文档记录 `pets/golden-retriever-coder` 的制作过程。目标是把参考图里的金毛做成接近猫咪范本的软萌插画风宠物，温柔、长毛感明显，同时避免程序矢量感。
 
 ## 目标效果
 
@@ -32,7 +32,7 @@ pets/golden-retriever-coder/
 2. 生成时锁定这些要求：
 
 ```text
-Style: rounded plush mascot, soft semi-3D sticker look, gentle shading, warm highlights, subtle long-fur texture.
+Style: use the existing cat pet spritesheet as the visual anchor, with delicate long-fur edges, soft semi-3D sticker look, gentle shading, warm highlights.
 Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
 Rows: idle, left movement, right movement, greeting, happy jump, error/confused, progress, front walk, laptop coding.
 Critical quality: one golden retriever per cell, no ghosting, no afterimages, no cropped ears/tail/paws, no cell bleeding.

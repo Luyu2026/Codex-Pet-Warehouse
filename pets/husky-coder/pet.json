@@ -1,7 +1,7 @@
 {
   "id": "husky-coder",
   "displayName": "Husky Coder",
-  "description": "A bright-eyed soft-style husky coding companion.",
+  "description": "A bright-eyed cat-style husky coding companion.",
   "spritesheetPath": "spritesheet.png",
   "frameWidth": 192,
   "frameHeight": 208,
