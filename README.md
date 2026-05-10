@@ -1,7 +1,7 @@
-# Codex Pet Warehouse
+# Codex Pet Skill
 
 这里集结了 Codex 自定义宠物的制作流程、可复用 skill、以及本机已经做好的宠物包。
-![Uploading 桌面宠物skill封面.png…]
+
 
 ## 使用声明
 
