@@ -67,7 +67,7 @@ python skills/codex-pet-maker/scripts/pet_atlas.py validate --pet-dir pets/corgi
 ## 常见问题
 
 - 如果有残影或串格，重新打包时加 `--repack`。
-- 如果左右移动方向反了，运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/corgi-coder --rows 2 3`。
+- 如果左右移动方向反了，运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/corgi-coder --rows 2 3`。当前 Codex renderer 中第 2 行应面向右，第 3 行应面向左。
 - 如果 Codex 里仍显示旧图，重新打开宠物列表；必要时切换一次宠物或重启 Codex。
 
 ## 安装

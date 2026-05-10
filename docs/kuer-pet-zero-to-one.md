@@ -1,6 +1,6 @@
 # 0 基础：跟着做一组 Codex 酷儿宠物
 
-这篇文档记录 `pets/酷儿-coder` 的制作过程。目标是把用户提供的蓝色卡通形象做成 Codex 宠物，同时遵守本仓库沉淀下来的两个关键原则：最终美术用图片生成完成；第 2 行必须左跑，第 3 行必须右跑。
+这篇文档记录 `pets/酷儿-coder` 的制作过程。目标是把用户提供的蓝色卡通形象做成 Codex 宠物，同时遵守本仓库沉淀下来的两个关键原则：最终美术用图片生成完成；当前 Codex renderer 中第 2 行必须右跑，第 3 行必须左跑。
 
 ## 目标效果
 
@@ -56,10 +56,11 @@ python skills/codex-pet-maker/scripts/pet_atlas.py package \
 
 打开 `pets/酷儿-coder/spritesheet-grid-check.png`：
 
-- 第 2 行必须面向左。
-- 第 3 行必须面向右。
+- 第 2 行必须面向右。
+- 第 3 行必须面向左。
 - 如果两行都反，用 `flip-rows --rows 2 3`。
-- 如果只有右移动反，用 `flip-rows --rows 3`。
+- 如果只有右移动反，用 `flip-rows --rows 2`。
+- 如果只有左移动反，用 `flip-rows --rows 3`。
 
 5. 校验：
 
@@ -75,4 +76,3 @@ cp -R pets/酷儿-coder/. ~/.codex/pets/酷儿-coder/
 ```
 
 安装后选择 `酷儿`。如果 Codex 仍显示旧图或旧方向，重启 Codex 清缓存。
-

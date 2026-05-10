@@ -63,7 +63,7 @@ python skills/codex-pet-maker/scripts/pet_atlas.py validate --pet-dir pets/golde
 
 - 长毛导致轮廓糊：减少细碎毛发，保留柔和高光和大轮廓。
 - 有残影：打包时加 `--repack`。
-- 左右方向反：运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/golden-retriever-coder --rows 2 3`。
+- 左右方向反：运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/golden-retriever-coder --rows 2 3`。当前 Codex renderer 中第 2 行应面向右，第 3 行应面向左。
 
 ## 安装
 

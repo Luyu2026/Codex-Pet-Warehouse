@@ -62,7 +62,7 @@ python skills/codex-pet-maker/scripts/pet_atlas.py validate --pet-dir pets/husky
 ## 常见问题
 
 - 有残影：打包时加 `--repack`。
-- 左右方向反：运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/husky-coder --rows 2 3`。
+- 左右方向反：运行 `python skills/codex-pet-maker/scripts/pet_atlas.py flip-rows --pet-dir pets/husky-coder --rows 2 3`。当前 Codex renderer 中第 2 行应面向右，第 3 行应面向左。
 - 眼睛太小看不出品种：放大眼睛高光或强化面罩，不要加复杂背景。
 
 ## 安装

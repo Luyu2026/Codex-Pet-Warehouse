@@ -54,6 +54,8 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 用 $codex-pet-maker 根据这张参考图做一个 Codex 宠物，并安装到自定义宠物文件夹。
 ```
 
+用户只需要给出参考图和这句需求；移动方向复核、打包校验和本机安装是 `codex-pet-maker` skill 的内置流程。
+
 ## 制作流程摘要
 
 1. 先确认宠物人格、名字、动作差异和参考图特征。
@@ -62,10 +64,10 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 4. 用 skill 内的提示词范本生成 8 列 x 9 行的透明 spritesheet，尺寸为 `1536 x 1872`，单格 `192 x 208`。
 5. 使用 `scripts/pet_atlas.py package` 清理假透明背景、可选重排格子、生成 `pet.json`。使用 `--repack` 后必须人工检查 `spritesheet-grid-check.png`，避免重排漏格。
 6. 用 `scripts/pet_atlas.py validate` 校验尺寸、透明度和元数据。
-7. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行。
+7. 如移动方向相反，用 `scripts/pet_atlas.py flip-rows --rows 2 3` 按单格翻转方向行；当前 Codex renderer 的实际契约是第 2 行向右、第 3 行向左。
 8. 用 `scripts/pet_atlas.py install` 安装到 `~/.codex/pets`。
 
-方向是每次必须检查的高频坑：第 2 行必须朝左，第 3 行必须朝右。只修朝向时按单格 `flip-rows`，不要倒序整行。详细清单见 [Codex Pet 方向 QA 清单](docs/pet-direction-qa.md)。
+方向是每次必须检查的高频坑：当前 Codex renderer 中，第 2 行必须朝右、第 3 行必须朝左，这样实际移动时才会“向左移动向左跑、向右移动向右跑”。只修朝向时按单格 `flip-rows`，不要倒序整行。详细清单见 [Codex Pet 方向 QA 清单](docs/pet-direction-qa.md)。
 
 脚本依赖 Pillow；如果系统 `python3` 没有 Pillow，可以在 Codex 里使用 bundled Python runtime。
 
