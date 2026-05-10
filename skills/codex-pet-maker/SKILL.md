@@ -49,9 +49,10 @@ Direction repair table:
 7. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
 8. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
 9. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, and left/right movement direction errors. For the current renderer, row 2 must face right and row 3 must face left.
-10. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
-11. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
-12. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
+10. Also inspect the pet on a dark background, especially the first idle frame and face/mouth areas. White grid checks can hide accidental transparent holes, broken dark masks, or over-dark generated fur patches; on Codex's dark UI those problems look like black cracks. Fix these before installing or committing.
+11. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
+12. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
+13. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
 
 ## Recommended Generation Prompt Shape
 
