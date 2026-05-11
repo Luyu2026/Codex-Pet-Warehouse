@@ -12,8 +12,8 @@ Character: glossy red-suited pig hero mascot, red helmet/hood, yellow eye patche
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:
 1 idle standing, blink, breathing;
-2 side movement facing left, clean loop;
-3 side movement facing right, clean loop;
+2 side movement facing right, clean loop;
+3 side movement facing left, clean loop;
 4 greeting/waving;
 5 happy celebration/jump;
 6 error/confused, first two frames holding ERROR sign;
@@ -32,8 +32,8 @@ Preserve key traits: coat colors and markings, eye color, face shape, tail type,
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:
 1 seated idle, slow blink, ear twitch, tail curl;
-2 side-walk movement facing left, paws alternating;
-3 side-walk or trot movement facing right, paws alternating;
+2 side-walk movement facing right, paws alternating;
+3 side-walk or trot movement facing left, paws alternating;
 4 paw raise / attention / tiny meow;
 5 cat-specific play, roll, loaf, stretch, or pounce;
 6 error/confused, first two frames holding ERROR sign;
@@ -54,8 +54,8 @@ Avoid program-drawn vector art, pixel art, hard icon outlines, flat emoji style,
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:
 1 seated idle, blink, breathing;
-2 side-run or side-walk movement facing left, paws alternating;
-3 side-run or side-walk movement facing right, paws alternating;
+2 side-run or side-walk movement facing right, paws alternating;
+3 side-run or side-walk movement facing left, paws alternating;
 4 paw raise / greeting;
 5 happy jump or playful bounce;
 6 error/confused, first two frames holding ERROR sign;
@@ -64,6 +64,27 @@ Rows:
 9 sitting with small dark laptop, typing/blinking.
 Critical quality: one dog per cell, no ghosting, no afterimages, no duplicate silhouettes, no motion trails, no cropped ears/tail/paws, no cell bleeding.
 Background: transparent if possible, otherwise flat removable light checker-free background.
+```
+
+## Pet Photo Rabbit / White Fur Pet
+
+```text
+Create a Codex-compatible 8-column by 9-row soft chibi rabbit spritesheet from the reference rabbit photo.
+Style anchor: match the existing soft cat pet spritesheets: fluffy fur edges, gentle semi-3D sticker volume, soft shadows, bright round eyes, cute rounded proportions, clean readable silhouette.
+Identity anchor: preserve the reference rabbit's white fluffy fur, tall upright ears with soft pink inner ears, round cheeks, tiny pink nose, compact body, small paws, and gentle curious expression.
+Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
+Rows:
+1 seated idle, blink, ear twitch;
+2 side-hop movement facing right, paws alternating;
+3 side-hop movement facing left, paws alternating;
+4 paw raise / attention;
+5 happy hop, tiny spin, or playful bounce;
+6 error/confused, first two frames holding ERROR sign;
+7 progress bars labeled exactly 0%, 20%, 40%, 60%, 80%, 100%, 100%, 100%;
+8 front-facing hop toward viewer;
+9 sitting with small dark laptop, paw typing/blinking.
+Critical quality: one rabbit per cell, no ghosting, no afterimages, no duplicate silhouettes, no motion trails, no cropped ears/paws, no cell bleeding.
+Background: transparent if possible. If transparent output is unreliable, use a flat removable pale cyan/blue background, not white and not checkerboard, so white fur is preserved during cleanup.
 ```
 
 ## Cartoon Mascot
@@ -76,8 +97,8 @@ Identity anchor: preserve the reference character's key traits: sky-blue body, r
 Canvas: exactly 1536x1872 if possible, each frame fits a 192x208 cell.
 Rows:
 1 idle standing, blink, breathing;
-2 side movement facing left, clean loop;
-3 side movement facing right, clean loop;
+2 side movement facing right, clean loop;
+3 side movement facing left, clean loop;
 4 greeting/waving or clasped-hands attention;
 5 happy bounce / delighted dance;
 6 error/confused, first two frames holding ERROR sign;

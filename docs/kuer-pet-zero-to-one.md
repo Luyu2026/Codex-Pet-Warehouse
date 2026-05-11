@@ -36,7 +36,7 @@ pets/酷儿-coder/
 Final artwork must be image-generated, not programmatic vector drawing.
 Style anchor: preserve the reference character's clean black outline, flat friendly colors, expressive face, and readable silhouette.
 Identity anchor: sky-blue body, round head, one pointed cat-like ear, orange cheek circles, black oval nose, closed smiling eyes, tiny body, clasped hands.
-Rows: idle, left movement, right movement, greeting, happy bounce, error/confused, progress, front walk, laptop coding.
+Rows: idle, right movement, left movement, greeting, happy bounce, error/confused, progress, front walk, laptop coding.
 Critical quality: one mascot per cell, no ghosting, no afterimages, no cropped ear/limbs/props, no cell bleeding.
 ```
 

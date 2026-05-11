@@ -45,20 +45,23 @@ Direction repair table:
 3. Do not draw final artwork with programmatic vector/geometric scripts. Use image generation for final mascot art; keep scripts for packaging, cleanup, validation, direction fixes, and occasional bad-cell repair.
 4. When a successful pet already exists, use its spritesheet as the style anchor. For cat-style dog pets, use `cream-orange-cat-coder` or `tuxedo-cat-coder` as the style reference, then use the user's dog photo as the identity reference.
 5. Generate the spritesheet with the built-in image generation flow. Preserve the key identity traits but make a small, readable mascot.
-6. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
-7. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
-8. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
-9. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, and left/right movement direction errors. For the current renderer, row 2 must face right and row 3 must face left.
-10. Also inspect the pet on a dark background, especially the first idle frame and face/mouth areas. White grid checks can hide accidental transparent holes, broken dark masks, or over-dark generated fur patches; on Codex's dark UI those problems look like black cracks. Fix these before installing or committing.
-11. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
-12. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
-13. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
+6. For white or very light pets, avoid white, transparent-checker, or near-white backgrounds during generation. Use a flat contrasting pale cyan/blue background that can be removed later; otherwise background cleanup may erase white fur, paws, ears, or face highlights.
+7. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
+8. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
+9. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
+10. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, and left/right movement direction errors. For the current renderer, row 2 must face right and row 3 must face left.
+11. Also inspect the pet on a dark background, especially the first idle frame and face/mouth areas. White grid checks can hide accidental transparent holes, broken dark masks, or over-dark generated fur patches; on Codex's dark UI those problems look like black cracks. Fix these before installing or committing.
+12. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
+13. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
+14. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
 
 ## Recommended Generation Prompt Shape
 
 Use the templates in `references/prompt-templates.md` when starting from scratch. Choose the pig template for glossy chibi toy mascots, the cat template for pet-photo cat mascots, and the dog template for cat-style soft pet-photo dog mascots.
 
 For dogs, use the existing cat pets as the style anchor: delicate fur edges, soft shading, rounded semi-3D sticker volume, and cute expressive faces. Use the dog photo only as the identity anchor for breed traits, markings, ears, tail, proportions, and expression. Do not use program-drawn final art, pixel art, flat emoji, hard vector outlines, or geometric block bodies unless the user explicitly asks for that style.
+
+For white or pale pets such as rabbits, white cats, or light dogs, ask for a flat removable pale cyan/blue background if transparent output is unreliable. Do not use a white background or checkerboard background as the generation background; it makes background removal confuse the pet's white fur with empty space.
 
 Always include:
 

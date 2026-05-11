@@ -23,6 +23,7 @@
 - `tuxedo-cat-coder`: 黑白长毛猫宠物。
 - `陆羽-coder`: 基于真人照片生成的黑衣编码伙伴。
 - `酷儿-coder`: 基于蓝色卡通形象制作的开心编码伙伴。
+- `rabbit-coder`: 基于白色兔子参考图制作的毛茸茸编码伙伴。
 
 ## 安装宠物
 
@@ -80,5 +81,6 @@ cp -R skills/codex-pet-maker ~/.codex/skills/codex-pet-maker
 - [0 基础：跟着做一组 Codex 哈士奇宠物](docs/husky-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 金毛宠物](docs/golden-retriever-pet-zero-to-one.md)
 - [0 基础：跟着做一组 Codex 酷儿宠物](docs/kuer-pet-zero-to-one.md)
+- [0 基础：跟着做一组 Codex 兔子宠物](docs/rabbit-pet-zero-to-one.md)
 - [Codex Pet 美术流程结论](docs/pet-artwork-pipeline-notes.md)
 - [Codex Pet 方向 QA 清单](docs/pet-direction-qa.md)
