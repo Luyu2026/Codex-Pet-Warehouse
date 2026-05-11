@@ -49,11 +49,12 @@ Direction repair table:
 7. Require one crisp subject per cell. Prompt against: ghosting, afterimages, motion trails, duplicate silhouettes, cropped ears/tails/paws, and cell bleeding.
 8. Use the row contract. Do not replace movement rows with non-movement actions, even for animals; make the movement rows species-appropriate instead.
 9. Save the generated image into the workspace, then run `scripts/pet_atlas.py package` to resize, remove fake checkerboard backgrounds, optionally repack components into fixed cells, create `pet.json`, and validate.
-10. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, and left/right movement direction errors. For the current renderer, row 2 must face right and row 3 must face left.
-11. Also inspect the pet on a dark background, especially the first idle frame and face/mouth areas. White grid checks can hide accidental transparent holes, broken dark masks, or over-dark generated fur patches; on Codex's dark UI those problems look like black cracks. Fix these before installing or committing.
-12. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
-13. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
-14. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
+10. Open or inspect `spritesheet-grid-check.png`. Mechanical validation is necessary but not sufficient; visual QA catches bad style, missing cells, cell bleeding, frame edge contact, and left/right movement direction errors. For the current renderer, row 2 must face right and row 3 must face left. Never trust the prompt or row names alone; inspect the actual pixels after packaging.
+11. Check padding against the red grid. If ears, feet, hair, props, or shadows touch the top/bottom/left/right red cell borders, Codex's small preview can show fragments from neighboring rows as ghosting. Fix by repacking, shrinking/recentering each cell, or regenerating with more padding before installing.
+12. Also inspect the pet on a dark background, especially the first idle frame and face/mouth areas. White grid checks can hide accidental transparent holes, broken dark masks, or over-dark generated fur patches; on Codex's dark UI those problems look like black cracks. Fix these before installing or committing.
+13. Install by copying the package contents into `~/.codex/pets/<pet-id>/`. If the target folder already exists, use `cp -R <pet-dir>/. ~/.codex/pets/<pet-id>/`; do not copy the folder onto itself or Codex may keep reading stale outer files.
+14. If the settings UI still shows old art, tell the user to switch pets or restart Codex to clear cache.
+15. Before any Git commit or push, reinstall the changed pet into `~/.codex/pets/<pet-id>/`, validate both the repo pet and the installed pet, and compare hashes for `pet.json`, `spritesheet.png`, and `spritesheet-clean.png`. Do not push a direction fix that exists only in the repo or only in the local pet folder.
 
 ## Recommended Generation Prompt Shape
 
@@ -99,4 +100,4 @@ Use `--repack` when the generated atlas visually looks like a grid but Codex pre
 
 Use `flip-rows` when movement direction is reversed. It flips each frame inside the listed row numbers while preserving frame order.
 
-Before finishing, always test or inspect the movement contract: row 2 faces right and row 3 faces left, so moving left shows a left-facing run and moving right shows a right-facing run. If the local Codex preview still shows old movement, reinstall the pet folder contents into `~/.codex/pets/<pet-id>/` and restart Codex to clear cache.
+Before finishing, always test or inspect the movement contract: row 2 faces right and row 3 faces left, so moving left shows a left-facing run and moving right shows a right-facing run. The recurring failure mode is a generated sheet where row 2 faces left and row 3 faces right; this must be flipped before local install and before Git commit. If the local Codex preview still shows old movement, reinstall the pet folder contents into `~/.codex/pets/<pet-id>/` and restart Codex to clear cache.

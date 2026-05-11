@@ -219,6 +219,8 @@ def add_grid_check(image: Image.Image, out_path: Path) -> None:
         draw.line((x, 0, x, ATLAS_H), fill=(255, 0, 0, 120), width=1)
     for y in range(0, ATLAS_H + 1, CELL_H):
         draw.line((0, y, ATLAS_W, y), fill=(255, 0, 0, 120), width=1)
+    draw.text((6, CELL_H + 6), "row 2: RIGHT movement, character faces RIGHT", fill=(255, 0, 0, 255))
+    draw.text((6, CELL_H * 2 + 6), "row 3: LEFT movement, character faces LEFT", fill=(255, 0, 0, 255))
     check.convert("RGB").save(out_path)
 
 

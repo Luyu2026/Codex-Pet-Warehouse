@@ -13,6 +13,17 @@ Codex 宠物 spritesheet 使用 8 列 x 9 行。当前 Codex desktop renderer �
 
 修方向时只能镜像每个单格里的角色，不能把整行倒序。倒序会改变动画帧顺序，容易让跑步节奏变怪。
 
+## 本次复盘出的根因
+
+这次兔子和陆羽反复跑反，不是 `flip-rows` 工具失效，而是最终提交的实际 spritesheet 仍然是第 2 行朝左、第 3 行朝右；同时部分旧教程还写着早期的“第 2 行左、第 3 行右”，容易把后续制作带偏。后续统一以 `spritesheet-grid-check.png` 的实际像素为准，不能只看提示词或行名。
+
+新的 `spritesheet-grid-check.png` 会直接标注：
+
+- `row 2: RIGHT movement, character faces RIGHT`
+- `row 3: LEFT movement, character faces LEFT`
+
+如果实际图像和这两行标注不一致，先 `flip-rows --rows 2 3`，再安装和提交。
+
 ## 必做检查
 
 打包完成后，先打开 `spritesheet-grid-check.png`：
@@ -20,7 +31,8 @@ Codex 宠物 spritesheet 使用 8 列 x 9 行。当前 Codex desktop renderer �
 1. 看第 2 行：每一格角色鼻子、脸、身体前进方向都应朝右。
 2. 看第 3 行：每一格角色鼻子、脸、身体前进方向都应朝左。
 3. 如果角色左右不明显，优先看脸、脚步、尾巴和动作重心。
-4. 安装到本机后，在 Codex 里实际拖动测试：往左移动应向左跑，往右移动应向右跑。
+4. 看每格是否贴住红色边界。贴边会让 Codex 小预览出现上一行/下一行碎片，看起来像重影。
+5. 安装到本机后，在 Codex 里实际拖动测试：往左移动应向左跑，往右移动应向右跑。
 
 ## 修复决策表
 

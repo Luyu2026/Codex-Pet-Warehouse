@@ -36,7 +36,7 @@ pets/golden-retriever-coder/
 Style anchor: use the existing cat pet spritesheet as the visual anchor, with delicate long-fur edges, soft semi-3D sticker look, gentle shading, warm highlights.
 Identity anchor: use the golden retriever photo for golden coat, droopy ears, gentle round eyes, black nose, long fur, and fluffy tail.
 Avoid pixel art, hard vector icon outlines, flat emoji style, jagged edges, and blocky shapes.
-Rows: idle, left movement, right movement, greeting, happy jump, error/confused, progress, front walk, laptop coding.
+Rows: idle, right movement, left movement, greeting, happy jump, error/confused, progress, front walk, laptop coding.
 Critical quality: one golden retriever per cell, no ghosting, no afterimages, no cropped ears/tail/paws, no cell bleeding.
 ```
 
