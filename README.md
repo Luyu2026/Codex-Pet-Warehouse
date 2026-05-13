@@ -2,7 +2,7 @@
 
 <div align="center">
 
-## 让写代码这件事，少一点孤独感
+## 让工作少一点孤独感
 
 ![Codex Pet Skill](assets/codex-pet-skill-hero.jpg)
 
