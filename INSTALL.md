@@ -49,7 +49,7 @@ python skills/codex-pet-maker/scripts/pet_atlas.py validate --pet-dir pets/lihua
 重启 Codex 后，在对话里说：
 
 ```text
-用 $codex-pet-maker 根据这张参考图做一个 Codex 宠物，并安装到自定义宠物文件夹。
+用 $codex-pet-maker 根据这张参考图做一个 Codex 桌面宠物。
 ```
 
-生成完成后，打开 Codex 的自定义宠物列表选择对应宠物。若列表仍显示旧图，切换一次宠物或重启 Codex 清缓存。
+用户只需要说明参考图和可选名称；生成、校验、方向修复、本机安装到 `~/.codex/pets` 都是 skill 的默认责任。生成完成后，打开 Codex 的自定义宠物列表选择对应宠物。若列表仍显示旧图，切换一次宠物或重启 Codex 清缓存。

@@ -65,10 +65,10 @@ cp -R pets/* ~/.codex/pets/
 
 ## 快速开始
 
-安装 skill 后，在 Codex 里直接说：
+安装 skill 后，在 Codex 里直接说清楚“用哪张图做宠物”即可：
 
 ```text
-用 $codex-pet-maker 根据这张参考图做一个 Codex 宠物，并安装到自定义宠物文件夹。
+用 $codex-pet-maker 根据这张参考图做一个 Codex 桌面宠物。
 ```
 
 如果你想指定名字，也可以这样说：
@@ -77,13 +77,15 @@ cp -R pets/* ~/.codex/pets/
 用 $codex-pet-maker 根据这张猫咪照片做一个宠物，名字叫狸花猫 Coder。
 ```
 
+不需要额外说明“安装到 Codex 自定义宠物文件夹”。这是 skill 的默认交付动作：只要用户要求“做桌面宠物”，skill 就应该生成、打包、校验，并安装到 `~/.codex/pets/<pet-id>`。
+
 skill 会默认完成这些步骤：
 
 1. 识别参考图里的形象特征。
 2. 用图片生成流程制作软萌宠物 spritesheet。
 3. 打包成 Codex 可识别的 `pet.json` 和 `spritesheet.png`。
 4. 检查方向、重影、裁切、串格和透明背景。
-5. 安装到 `~/.codex/pets/<pet-id>`。
+5. 默认安装到 `~/.codex/pets/<pet-id>`，让它出现在 Codex 自定义宠物列表里。
 
 ## 已收录宠物
 

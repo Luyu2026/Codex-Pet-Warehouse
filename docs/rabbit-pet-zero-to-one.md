@@ -26,7 +26,7 @@ pets/rabbit-coder/
 1. 调用 skill：
 
 ```text
-用 $codex-pet-maker 根据这张白色兔子参考图做一个 Codex 宠物，名字叫 Rabbit Coder，并安装到本地。
+用 $codex-pet-maker 根据这张白色兔子参考图做一个 Codex 桌面宠物，名字叫 Rabbit Coder。
 ```
 
 2. 生成时锁定这些要求：

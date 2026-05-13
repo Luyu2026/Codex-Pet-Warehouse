@@ -40,7 +40,7 @@ Direction repair table:
 
 ## Workflow
 
-1. Treat direction QA, packaging validation, and local installation as built-in skill responsibilities. Do not require the user to explicitly say "check movement direction"; the simple request "make a Codex pet from this reference and install it" is enough.
+1. Treat generation, packaging validation, direction QA, and local installation as built-in skill responsibilities. Do not require the user to explicitly say "install it" or "check movement direction"; the simple request "make a Codex desktop pet from this reference" is enough and must end with the pet installed in `~/.codex/pets/<pet-id>`.
 2. Inspect existing pets first if the user says "like the previous one": `find ~/.codex/pets -maxdepth 2 -type f`.
 3. Do not draw final artwork with programmatic vector/geometric scripts. Use image generation for final mascot art; keep scripts for packaging, cleanup, validation, direction fixes, and occasional bad-cell repair.
 4. When a successful pet already exists, use its spritesheet as the style anchor. For cat-style dog pets, use `cream-orange-cat-coder` or `tuxedo-cat-coder` as the style reference, then use the user's dog photo as the identity reference.
