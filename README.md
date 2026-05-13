@@ -8,7 +8,7 @@
 
 [![Codex](https://img.shields.io/badge/Codex-Custom%20Pet-blueviolet)](https://github.com/openai/codex)
 [![Skill](https://img.shields.io/badge/Skill-Pet%20Maker-green)](skills/codex-pet-maker/SKILL.md)
-[![Use](https://img.shields.io/badge/Use-Personal%20Only-orange)](#使用声明)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
 
@@ -127,8 +127,10 @@ spritesheet-clean.png
 spritesheet-grid-check.png
 ```
 
-## 使用声明
+## License
 
-本仓库内容仅供个人学习、研究和自用，请勿用于商业用途。部分范例宠物可能参考了第三方角色、公开图片或个人照片的视觉特征；使用者应自行确认相关素材和形象的授权边界，并避免分发、售卖或用于任何可能造成权利争议的场景。
+本仓库的代码、脚本、skill 工作流和文档以 [MIT License](LICENSE) 开源。
+
+请注意：仓库中的示例宠物、参考图片或生成素材可能包含个人照片、公开图片或第三方角色的视觉特征。使用、分发或商用这些具体素材前，请自行确认相关权利和授权边界。
 
 如果这个项目帮你做出了喜欢的 Codex 小宠物，欢迎 star，也欢迎提交你自己的宠物包和制作经验。
