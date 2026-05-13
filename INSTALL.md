@@ -1,6 +1,6 @@
 # Codex Pet Skill 安装说明
 
-这份说明给 Codex / Claude Code / OpenCode 等 agent 使用。目标是把 `codex-pet-maker` skill 和内置宠物安装到本机 Codex。
+这份说明给 Codex 使用。目标是把 `codex-pet-maker` skill 和内置宠物安装到本机 Codex。
 
 ## 1. 获取仓库
 
